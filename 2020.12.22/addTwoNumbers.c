@@ -25,7 +25,6 @@ void ajouteNum(ListNode* l,int val){
 ListNode* addTwoNumbers(ListNode* l1,ListNode* l2){
 	ListNode* temp1 = l1;
 	ListNode* temp2 = l2;
-	ListNode* temp3;
 	ListNode* res = NULL;
 	int celui_ci,n1,n2;
 	int precedent = 0;
@@ -48,14 +47,7 @@ ListNode* addTwoNumbers(ListNode* l1,ListNode* l2){
 		if (temp2) temp2 = temp2->suivant;
 	}
 	if (precedent > 0){
-		if (n1 + n2 + precedent >= 10){
-			celui_ci = n1 + n2 + precedent - 10;
-			precedent = 1;
-		}else{
-			celui_ci = n1 + n2 + precedent;
-			precedent = 0;
-		}
-		ajouteNum(res,celui_ci);
+		ajouteNum(res,precedent);
 	}
 	
 	return res;
