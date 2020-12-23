@@ -28,7 +28,7 @@ public class Solution {
             }
             if(l2 != null){
                 l2 = l2.next;
-            }
+            }// Lambda on l1.next will be 1ms slower
         }
         return res.next;
     }
